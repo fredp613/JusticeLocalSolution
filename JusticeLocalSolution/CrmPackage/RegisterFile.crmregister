@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/crm/2011/tools/pluginregistration">
+  <Solutions>
+    <Solution Assembly="JusticeLocalSolution.Plugins.dll" Id="cd92bb96-7a3c-e611-93fb-06a5b6453db2" IsolationMode="Sandbox" SourceType="Database">
+      <PluginTypes>
+        <Plugin Description="Plug-in to PreFCProfileUpdate" FriendlyName="PreFCProfileUpdate" Name="JusticeLocalSolution.Plugins.PreFCProfileUpdate" Id="d092bb96-7a3c-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreFCProfileUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreFCProfileUpdate" Description="Pre-Operation of FC Profile Update" Id="d192bb96-7a3c-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_fc_profile" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTPProfileCreate" FriendlyName="PreTPProfileCreate" Name="JusticeLocalSolution.Plugins.PreTPProfileCreate" Id="d492bb96-7a3c-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreTPProfileCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTPProfileCreate" Description="Pre-Operation of TP Profile Create" Id="d592bb96-7a3c-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileCreate" FriendlyName="PostTPProfileCreate" Name="JusticeLocalSolution.Plugins.PostTPProfileCreate" Id="e3869008-7c3c-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileCreate" Description="Post-Operation of TP Profile Create" Id="e4869008-7c3c-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTPProfileUpdate" FriendlyName="PreTPProfileUpdate" Name="JusticeLocalSolution.Plugins.PreTPProfileUpdate" Id="283058b0-803c-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreTPProfileUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTPProfileUpdate" Description="Pre-Operation of TP Profile Update" Id="293058b0-803c-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileUpdate" FriendlyName="PostTPProfileUpdate" Name="JusticeLocalSolution.Plugins.PostTPProfileUpdate" Id="57ae29ee-863c-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileUpdate" Description="Post-Operation of TP Profile Update" Id="58ae29ee-863c-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_datestart,egcs_dateend,egcs_amtannualplannedbudget" EntityAlias="tpProfile" Id="e4ad51ec-c6d5-e511-80fd-005056a03443" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileAssociate" FriendlyName="PostTPProfileAssociate" Name="JusticeLocalSolution.Plugins.PostTPProfileAssociate" Id="1037c373-d63e-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileAssociate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileAssociate" Description="Post-Operation of Account Create" Id="c7b297a8-d93e-e611-93fb-06a5b6453db2" MessageName="Associate" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreTPProfileAssociate" FriendlyName="PreTPProfileAssociate" Name="JusticeLocalSolution.Plugins.PreTPProfileAssociate" Id="283058b0-803c-e611-93fb-06a5b6453db0" TypeName="JusticeLocalSolution.Plugins.PreTPProfileAssociate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreTPProfileAssociate" Description="Pre-Operation of TP Profile Associate" Id="293058b0-803c-e611-93fb-06a5b6453db0" MessageName="Associate" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPEligibleCostCategoryCreate" FriendlyName="PostTPEligibleCostCategoryCreate" Name="JusticeLocalSolution.Plugins.PostTPEligibleCostCategoryCreate" Id="5f187cbd-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPEligibleCostCategoryCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPEligibleCostCategoryCreate" Description="Post-Operation of TP Eligible Cost Category Create" Id="60187cbd-c24a-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligiblecostcategory" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="63187cbd-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPEligibleCostCategoryUpdate" FriendlyName="PostTPEligibleCostCategoryUpdate" Name="JusticeLocalSolution.Plugins.PostTPEligibleCostCategoryUpdate" Id="64187cbd-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPEligibleCostCategoryUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPEligibleCostCategoryUpdate" Description="Post-Operation of TP Eligible Cost Category Update" Id="553280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligiblecostcategory" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="583280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPEligibleCostCategoryDelete" FriendlyName="PreValidateTPEligibleCostCategoryDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPEligibleCostCategoryDelete" Id="593280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPEligibleCostCategoryDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPEligibleCostCategoryDelete" Description="Pre-Validation of TP Eligible Cost Category Delete" Id="5a3280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligiblecostcategory" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="5d3280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPEligibleClientTypeCreate" FriendlyName="PostTPEligibleClientTypeCreate" Name="JusticeLocalSolution.Plugins.PostTPEligibleClientTypeCreate" Id="5e3280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPEligibleClientTypeCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPEligibleClientTypeCreate" Description="Post-Operation of TP Eligible Client Type Create" Id="5f3280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligibleclienttype" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="623280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPEligibleClientTypeUpdate" FriendlyName="PostTPEligibleClientTypeUpdate" Name="JusticeLocalSolution.Plugins.PostTPEligibleClientTypeUpdate" Id="633280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPEligibleClientTypeUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPEligibleClientTypeUpdate" Description="Post-Operation of TP Eligible Client Type Update" Id="643280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligibleclienttype" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="673280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPEligibleClientTypeDelete" FriendlyName="PreValidateTPEligibleClientTypeDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPEligibleClientTypeDelete" Id="683280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPEligibleClientTypeDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPEligibleClientTypeDelete" Description="Pre-Validation of TP Eligible Client Type Delete" Id="693280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligibleclienttype" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="6c3280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPEligibleActivityCreate" FriendlyName="PostTPEligibleActivityCreate" Name="JusticeLocalSolution.Plugins.PostTPEligibleActivityCreate" Id="6d3280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPEligibleActivityCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPEligibleActivityCreate" Description="Post-Operation of TP Eligible Activity Create" Id="6e3280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligibleactivity" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="713280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPEligibleActivityUpdate" FriendlyName="PostTPEligibleActivityUpdate" Name="JusticeLocalSolution.Plugins.PostTPEligibleActivityUpdate" Id="723280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPEligibleActivityUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPEligibleActivityUpdate" Description="Post-Operation of TP Eligible Activity Update" Id="733280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligibleactivity" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="763280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPEligibleActivityDelete" FriendlyName="PreValidateTPEligibleActivityDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPEligibleActivityDelete" Id="773280c3-c24a-e611-93fb-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPEligibleActivityDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPEligibleActivityDelete" Description="Pre-Validation of TP Eligible Activity Delete" Id="783280c3-c24a-e611-93fb-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_eligibleactivity" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="7b3280c3-c24a-e611-93fb-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPInitiativeCreate" FriendlyName="PostTPProfileTPInitiativeCreate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPInitiativeCreate" Id="24e07dea-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPInitiativeCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPInitiativeCreate" Description="Post-Operation of TP Profile TP Initiative Create" Id="25e07dea-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_initiative" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="28e07dea-7153-e611-93fe-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPInitiativeUpdate" FriendlyName="PostTPProfileTPInitiativeUpdate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPInitiativeUpdate" Id="29e07dea-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPInitiativeUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPInitiativeUpdate" Description="Post-Operation of TP Profile TP Initiative Update" Id="2ae07dea-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_initiative" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="2de07dea-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPProfileTPInitiativeDelete" FriendlyName="PreValidateTPProfileTPInitiativeDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPProfileTPInitiativeDelete" Id="2ee07dea-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPProfileTPInitiativeDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPProfileTPInitiativeDelete" Description="Pre-Validation of TP Profile TP Initiative Delete" Id="2fe07dea-7153-e611-93fe-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_initiative" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="32e07dea-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPObjectiveCreate" FriendlyName="PostTPProfileTPObjectiveCreate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPObjectiveCreate" Id="33e07dea-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPObjectiveCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPObjectiveCreate" Description="Post-Operation of TP Profile TP Objective Create" Id="34e07dea-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_objective" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="37e07dea-7153-e611-93fe-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPObjectiveUpdate" FriendlyName="PostTPProfileTPObjectiveUpdate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPObjectiveUpdate" Id="38e07dea-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPObjectiveUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPObjectiveUpdate" Description="Post-Operation of TP Profile TP Objective Update" Id="39e07dea-7153-e611-93fe-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_objective" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="3ce07dea-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPProfileTPObjectiveDelete" FriendlyName="PreValidateTPProfileTPObjectiveDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPProfileTPObjectiveDelete" Id="3de07dea-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPProfileTPObjectiveDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPProfileTPObjectiveDelete" Description="Pre-Validation of TP Profile TP Objective Delete" Id="3ee07dea-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_objective" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="41e07dea-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPExpectedResultCreate" FriendlyName="PostTPProfileTPExpectedResultCreate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPExpectedResultCreate" Id="caa5c4f0-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPExpectedResultCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPExpectedResultCreate" Description="Post-Operation of TP Profile TP Expected Result Create" Id="cba5c4f0-7153-e611-93fe-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_expectedresult" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="cea5c4f0-7153-e611-93fe-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPExpectedResultUpdate" FriendlyName="PostTPProfileTPExpectedResultUpdate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPExpectedResultUpdate" Id="cfa5c4f0-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPExpectedResultUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPExpectedResultUpdate" Description="Post-Operation of TP Profile TP Expected Result Update" Id="d0a5c4f0-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_expectedresult" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="d3a5c4f0-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPProfileTPExpectedResultDelete" FriendlyName="PreValidateTPProfileTPExpectedResultDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPProfileTPExpectedResultDelete" Id="d4a5c4f0-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPProfileTPExpectedResultDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPProfileTPExpectedResultDelete" Description="Pre-Validation of TP Profile TP Expected Result Delete" Id="d5a5c4f0-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_expectedresult" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="d8a5c4f0-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPPerformanceMeasureCreate" FriendlyName="PostTPProfileTPPerformanceMeasureCreate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPPerformanceMeasureCreate" Id="d9a5c4f0-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPPerformanceMeasureCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPPerformanceMeasureCreate" Description="Post-Operation of TP Profile TP Performance Measure Create" Id="daa5c4f0-7153-e611-93fe-06a5b6453db2" ImpersonatingUserId="8e050a76-7331-e611-93fb-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_performancemeasure" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="dda5c4f0-7153-e611-93fe-06a5b6453db2" MessagePropertyName="id" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostTPProfileTPPerformanceMeasureUpdate" FriendlyName="PostTPProfileTPPerformanceMeasureUpdate" Name="JusticeLocalSolution.Plugins.PostTPProfileTPPerformanceMeasureUpdate" Id="dea5c4f0-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostTPProfileTPPerformanceMeasureUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostTPProfileTPPerformanceMeasureUpdate" Description="Post-Operation of TP Profile TP Performance Measure Update" Id="dfa5c4f0-7153-e611-93fe-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_performancemeasure" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="e2a5c4f0-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreValidateTPProfileTPPerformanceMeasureDelete" FriendlyName="PreValidateTPProfileTPPerformanceMeasureDelete" Name="JusticeLocalSolution.Plugins.PreValidateTPProfileTPPerformanceMeasureDelete" Id="e3a5c4f0-7153-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreValidateTPProfileTPPerformanceMeasureDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreValidateTPProfileTPPerformanceMeasureDelete" Description="Pre-Validation of TP Profile TP Performance Measure Delete" Id="e4a5c4f0-7153-e611-93fe-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="egcs_tp_profile_tp_performancemeasure" Rank="1" SecureConfiguration="" Stage="PreOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="egcs_tp_profile" EntityAlias="parent_profile" Id="e7a5c4f0-7153-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostFieldNamePopulatorCreate" FriendlyName="PostFieldNamePopulatorCreate" Name="JusticeLocalSolution.Plugins.PostFieldNamePopulatorCreate" Id="e72a295a-4566-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostFieldNamePopulatorCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostFieldNamePopulatorCreate" Description="Post-Operation of Field Name Populator Create" Id="06b6ee86-4666-e611-93fe-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="fp_fieldnamepopulator" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostFieldNamePopulatorUpdate" FriendlyName="PostFieldNamePopulatorUpdate" Name="JusticeLocalSolution.Plugins.PostFieldNamePopulatorUpdate" Id="eb2a295a-4566-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostFieldNamePopulatorUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostFieldNamePopulatorUpdate" Description="Post-Operation of Field Name Populator Update" Id="4f31f58c-4666-e611-93fe-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="fp_fieldnamepopulator" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPreventDuplicateFieldCreate" FriendlyName="PostPreventDuplicateFieldCreate" Name="JusticeLocalSolution.Plugins.PostPreventDuplicateFieldCreate" Id="11536491-a368-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostPreventDuplicateFieldCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPreventDuplicateFieldCreate" Description="Post-Operation of Prevent Duplicate Field Create" Id="1ba79597-a368-e611-93fe-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="fp_preventduplicatefield" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostPreventDuplicateFieldUpdate" FriendlyName="PostPreventDuplicateFieldUpdate" Name="JusticeLocalSolution.Plugins.PostPreventDuplicateFieldUpdate" Id="1ea79597-a368-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostPreventDuplicateFieldUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostPreventDuplicateFieldUpdate" Description="Post-Operation of Prevent Duplicate Field Update" Id="1fa79597-a368-e611-93fe-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="fp_preventduplicatefield" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="fp_name" EntityAlias="fp_name" Id="22a79597-a368-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreFieldNamePopulatorDelete" FriendlyName="PreFieldNamePopulatorDelete" Name="JusticeLocalSolution.Plugins.PreFieldNamePopulatorDelete" Id="f543e54c-6b69-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreFieldNamePopulatorDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreFieldNamePopulatorDelete" Description="Pre-Operation of Field Name Populator Delete" Id="f643e54c-6b69-e611-93fe-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="fp_fieldnamepopulator" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="fp_name" EntityAlias="fp_name" Id="f943e54c-6b69-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PrePreventDuplicateFieldDelete" FriendlyName="PrePreventDuplicateFieldDelete" Name="JusticeLocalSolution.Plugins.PrePreventDuplicateFieldDelete" Id="961561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PrePreventDuplicateFieldDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PrePreventDuplicateFieldDelete" Description="Pre-Operation of Prevent Duplicate Field Delete" Id="971561e3-196a-e611-93fe-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="fp_preventduplicatefield" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="fp_name" EntityAlias="fp_name" Id="9a1561e3-196a-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMultiLingualEntityCreate" FriendlyName="PostMultiLingualEntityCreate" Name="JusticeLocalSolution.Plugins.PostMultiLingualEntityCreate" Id="9b1561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostMultiLingualEntityCreate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMultiLingualEntityCreate" Description="Post-Operation of Multi Lingual Entity Create" Id="9c1561e3-196a-e611-93fe-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="fp_multilingualentity" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images />
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PostMultiLingualEntityUpdate" FriendlyName="PostMultiLingualEntityUpdate" Name="JusticeLocalSolution.Plugins.PostMultiLingualEntityUpdate" Id="9f1561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostMultiLingualEntityUpdate">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PostMultiLingualEntityUpdate" Description="Post-Operation of Multi Lingual Entity Update" Id="a01561e3-196a-e611-93fe-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="fp_multilingualentity" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="fp_name" EntityAlias="fp_name" Id="a01561e3-196a-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PostImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+        <Plugin Description="Plug-in to PreMultiLingualEntityDelete" FriendlyName="PreMultiLingualEntityDelete" Name="JusticeLocalSolution.Plugins.PreMultiLingualEntityDelete" Id="a31561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreMultiLingualEntityDelete">
+          <Steps>
+            <clear />
+            <Step CustomConfiguration="" Name="PreMultiLingualEntityDelete" Description="Pre-Operation of Multi Lingual Entity Delete" Id="a41561e3-196a-e611-93fe-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="fp_multilingualentity" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
+              <Images>
+                <Image Attributes="fp_name" EntityAlias="fp_name" Id="a71561e3-196a-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
+              </Images>
+            </Step>
+          </Steps>
+        </Plugin>
+      </PluginTypes>
+    </Solution>
+  </Solutions>
+  <XamlWorkflows />
+</Register>

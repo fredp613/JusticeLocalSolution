@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92DB35AC-3841-4EF4-A2E8-8D700995E453}</ProjectGuid>
+    <ProjectTypeGuids>{4C25E9B5-9FA6-436c-8E19-B395D2A65FAF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JusticeLocalSolution.Plugins</RootNamespace>
+    <AssemblyName>JusticeLocalSolution.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>frederickpearson.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Xrm.Sdk">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Extensions\Microsoft\Dynamics CRM 2011 Developer Tools\1.0\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Extensions\Microsoft\Dynamics CRM 2011 Developer Tools\1.0\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Field Name Populator\Populator.cs" />
+    <Compile Include="Lib\Common\MetadataHelper.cs" />
+    <Compile Include="Lib\Common\OptionSetHelper.cs" />
+    <Compile Include="Lib\Common\PluginRegistration.cs" />
+    <Compile Include="Lib\Common\StringHelper.cs" />
+    <Compile Include="Lib\Common\UserLocaleHelper.cs" />
+    <Compile Include="Field Name Populator\PostFieldNamePopulatorCreate.cs" />
+    <Compile Include="Field Name Populator\PostFieldNamePopulatorUpdate.cs" />
+    <Compile Include="Multi Lingual Entity\MultiLingual.cs" />
+    <Compile Include="Multi Lingual Entity\PostMultiLingualEntityCreate.cs" />
+    <Compile Include="Multi Lingual Entity\PostMultiLingualEntityUpdate.cs" />
+    <Compile Include="Multi Lingual Entity\PreMultiLingualEntityDelete.cs" />
+    <Compile Include="PreventDuplicate\PrePreventDuplicateFieldDelete.cs" />
+    <Compile Include="PreventDuplicate\PostPreventDuplicateFieldCreate.cs" />
+    <Compile Include="PreventDuplicate\PostPreventDuplicateFieldUpdate.cs" />
+    <Compile Include="Field Name Populator\PreFieldNamePopulatorDelete.cs" />
+    <Compile Include="PreventDuplicate\PreventDuplicate.cs" />
+    <Compile Include="TP Profile Performance Measures\PostTPProfileTPPerformanceMeasureCreate.cs" />
+    <Compile Include="TP Profile Performance Measures\PostTPProfileTPPerformanceMeasureUpdate.cs" />
+    <Compile Include="TP Profile Performance Measures\PreValidateTPProfileTPPerformanceMeasureDelete.cs" />
+    <Compile Include="TP Profile TP Expected Results\PostTPProfileTPExpectedResultCreate.cs" />
+    <Compile Include="TP Profile TP Expected Results\PostTPProfileTPExpectedResultUpdate.cs" />
+    <Compile Include="TP Profile TP Expected Results\PreValidateTPProfileTPExpectedResultDelete.cs" />
+    <Compile Include="TP Profile TP Objectives\PostTPProfileTPObjectiveCreate.cs" />
+    <Compile Include="TP Profile TP Objectives\PostTPProfileTPObjectiveUpdate.cs" />
+    <Compile Include="TP Profile TP Objectives\PreValidateTPProfileTPObjectiveDelete.cs" />
+    <Compile Include="TP Profile TP Initiatives\PostTPProfileTPInitiativeCreate.cs" />
+    <Compile Include="TP Profile TP Initiatives\PostTPProfileTPInitiativeUpdate.cs" />
+    <Compile Include="TP Profile TP Initiatives\PreValidateTPProfileTPInitiativeDelete.cs" />
+    <Compile Include="TP Eligible Activity\PostTPEligibleActivityCreate.cs" />
+    <Compile Include="TP Eligible Activity\PostTPEligibleActivityUpdate.cs" />
+    <Compile Include="TP Eligible Activity\PreValidateTPEligibleActivityDelete.cs" />
+    <Compile Include="TP Eligible Client Type\PostTPEligibleClientTypeCreate.cs" />
+    <Compile Include="TP Eligible Client Type\PostTPEligibleClientTypeUpdate.cs" />
+    <Compile Include="TP Eligible Client Type\PreValidateTPEligibleClientTypeDelete.cs" />
+    <Compile Include="TP Eligible Cost Category\PostTPEligibleCostCategoryCreate.cs" />
+    <Compile Include="TP Eligible Cost Category\PostTPEligibleCostCategoryUpdate.cs" />
+    <Compile Include="TP Eligible Cost Category\PreValidateTPEligibleCostCategoryDelete.cs" />
+    <Compile Include="TP Profile\PreTPProfileAssociate.cs" />
+    <Compile Include="Lib\Common\FiscalYearHelper.cs" />
+    <Compile Include="Lib\FCProfile\AutoGenerateChildren.cs" />
+    <Compile Include="Lib\FCProfile\RelationshipValidation.cs" />
+    <Compile Include="Lib\Common\OptionSets.cs" />
+    <Compile Include="Lib\TPProfile\AutoGenerateChildren.cs" />
+    <Compile Include="Lib\TPProfile\RelationshipValidation.cs" />
+    <Compile Include="TP Profile\PostTPProfileAssociate.cs" />
+    <Compile Include="TP Profile\PostTPProfileCreate.cs" />
+    <Compile Include="TP Profile\PostTPProfileUpdate.cs" />
+    <Compile Include="FC Profile\PreFCProfileUpdate.cs" />
+    <Compile Include="TP Profile\PreTPProfileCreate.cs" />
+    <Compile Include="TP Profile\PreTPProfileUpdate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="frederickpearson.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
