@@ -60,7 +60,7 @@ namespace JusticeLocalSolution.Plugins
 
                 try
                 {
-                    var multiLingual = new MultiLingual(service, entityName);
+                    var multiLingual = new MultiLingual(service, tracingService, entityName);
 
                     if (!multiLingual.destroyPluginSteps())
                     {

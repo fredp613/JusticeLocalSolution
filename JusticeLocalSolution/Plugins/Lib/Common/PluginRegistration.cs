@@ -101,8 +101,12 @@ namespace JusticeLocalSolution.Plugins.Lib.Common
         public Guid generatePluginStep()
         {           
             _rank = 1;
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step 1");
+            }
             var pluginId = GetPluginTypeId();
-            _tracingService.Trace("in the step method ya");
+            
             if (_tracingService != null)
             {
                 _tracingService.Trace("in the plugin step");
