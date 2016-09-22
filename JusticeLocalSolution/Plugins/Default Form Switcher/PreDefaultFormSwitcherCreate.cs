@@ -1,4 +1,14 @@
 
+using System;
+using System.ServiceModel;
+using JusticeLocalSolution.Plugins.Lib.Common;
+using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
+
+
+
+
+
 namespace JusticeLocalSolution.Plugins
 {
     using System;
@@ -14,8 +24,8 @@ namespace JusticeLocalSolution.Plugins
     using Lib.Common;
     using FredPearson.Common;
 
-  
-    public class PostFieldNamePopulatorCreate : IPlugin
+
+    public class PreDefaultFormSwitcherCreate : IPlugin
     {
         public void Execute(IServiceProvider serviceProvider)
         {
@@ -42,28 +52,31 @@ namespace JusticeLocalSolution.Plugins
                 // Obtain the target entity from the input parameters.
                 Entity entity = (Entity)context.InputParameters["Target"];
 
-                if (entity.LogicalName != "fp_fieldnamepopulator")
+                if (entity.LogicalName != "fp_defaultformswitcher")
                     return;
-
                 try
                 {
-                    var entityForPlugin = entity.GetAttributeValue<string>("fp_name").ToString();
-
-                    if (!new Populator(service, entityForPlugin).generatePluginSteps())
+                    var entityForPlugin = entity.GetAttributeValue<string>("fp_name");
+                    tracingService.Trace("got this far {0}", entityForPlugin);
+                    if (!new DefaultFormSwitcher(service, tracingService, entityForPlugin).generatePluginSteps())
                     {
+                        tracingService.Trace("some went wrong in the form switcher class");
                         throw new InvalidPluginExecutionException("something went wrong", ex1);
                     }
-
+                    else
+                    {
+                        tracingService.Trace("got this far 1");
+                    }
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
                 {
-                    throw new InvalidPluginExecutionException("An error occurred in the Field Name Populator plug-in.", ex);
+                    throw new InvalidPluginExecutionException("An error occurred in the Default Form Switcher plug-in.", ex);
                 }
 
                 catch (Exception ex)
                 {
-                    tracingService.Trace("Field Name Populator Plugin: {0}", ex.ToString());
+                    tracingService.Trace("Default Form Switcher Plugin: {0}", ex.ToString());
                     throw;
                 }
 

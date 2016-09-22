@@ -217,6 +217,7 @@ namespace FredPearson.Common
 
         public bool generatePluginSteps() {
             FaultException ex1 = new FaultException();
+            
             Guid plug = new PluginGenerator(_service, "JusticeLocalSolution.Plugins", _entityName, "JusticeLocalSolution.Plugins.PopulatorPlugin", (int)CrmPluginStepStage.PreValidation,
                 "create step for name populator plugin for entity: " + _entityName, SdkMessageName.Create.ToString(),
                 "Create plugin populator", "update name field on create").generatePluginStep();

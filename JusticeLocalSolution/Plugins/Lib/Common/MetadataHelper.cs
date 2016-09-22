@@ -46,5 +46,18 @@ namespace JusticeLocalSolution.Plugins.Lib.Common
             return null;
         }
 
+        public int? getObjectTypeCode()
+        {
+            RetrieveEntityRequest entityRequest = new RetrieveEntityRequest();
+            entityRequest.LogicalName = _entity.LogicalName;
+
+            RetrieveEntityResponse entityResponse = (RetrieveEntityResponse)_service.Execute(entityRequest);
+            if (entityResponse != null)
+            {
+                return entityResponse.EntityMetadata.ObjectTypeCode.Value;
+            }
+            return null;
+        }
+
     }
 }

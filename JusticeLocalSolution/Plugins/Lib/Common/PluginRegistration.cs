@@ -51,13 +51,15 @@ namespace JusticeLocalSolution.Plugins.Lib.Common
     {
         //public exposed vars
         public IOrganizationService _service;
+        public ITracingService _tracingService;
         public string param_PluginClassWithNamespace = "";
         public int param_CrmPluginStepStage = 0;
         public string param_EntityName = "";
         public string param_StepName = "";
         public string param_SdkMessageName = "";
         public string param_PluginFriendlyName = "";
-        public string param_PluginDescription = "";       
+        public string param_PluginDescription = ""; 
+      
 
         //private vars
         private int _rank = 0;
@@ -65,6 +67,21 @@ namespace JusticeLocalSolution.Plugins.Lib.Common
 
         public PluginGenerator()
         {
+        }
+
+        public PluginGenerator(IOrganizationService service, ITracingService tracingService, string assemblyName, string entityName, string pluginClassWithNamespace, int crmPluginStepStage, string stepName, string sdkMessage, string friendlyName, string pluginDescription)
+        {
+            _service = service;
+            _tracingService = tracingService;
+            tracingService.Trace("im the plugin generator");
+            param_EntityName = entityName;
+            param_PluginClassWithNamespace = pluginClassWithNamespace;
+            param_CrmPluginStepStage = crmPluginStepStage;
+            param_StepName = stepName;
+            param_SdkMessageName = sdkMessage;
+            param_PluginFriendlyName = friendlyName;
+            param_PluginDescription = pluginDescription;
+            _assemblyName = assemblyName;
         }
 
         public PluginGenerator(IOrganizationService service, string assemblyName, string entityName, string pluginClassWithNamespace, int crmPluginStepStage, string stepName, string sdkMessage, string friendlyName, string pluginDescription)
@@ -85,17 +102,41 @@ namespace JusticeLocalSolution.Plugins.Lib.Common
         {           
             _rank = 1;
             var pluginId = GetPluginTypeId();
-
+            _tracingService.Trace("in the step method ya");
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step");
+            }
             Entity step = new Entity("sdkmessageprocessingstep");
             step["asyncautodelete"] = false;
             step["mode"] = new OptionSetValue((int)CrmPluginStepMode.Synchronous);
             step["name"] = param_StepName;
             step["rank"] = _rank;
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step 1");
+            }
             step["eventhandler"] = new EntityReference("plugintype", pluginId);
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step 2");
+            }
             step["sdkmessageid"] = new EntityReference("sdkmessage", GetMessageId());
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step 3");
+            }
             step["stage"] = new OptionSetValue((int)param_CrmPluginStepStage);
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step 4");
+            }
             step["supporteddeployment"] = new OptionSetValue((int)CrmPluginStepDeployment.ServerOnly);
             step["sdkmessagefilterid"] = new EntityReference("sdkmessagefilter", GetSdkMessageFilterId());
+            if (_tracingService != null)
+            {
+                _tracingService.Trace("in the plugin step 5");
+            }
             return _service.Create(step);
         }
 
