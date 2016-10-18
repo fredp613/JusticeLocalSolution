@@ -66,13 +66,8 @@
     <Compile Include="Lib\Common\UserLocaleHelper.cs" />
     <Compile Include="Field Name Populator\PostFieldNamePopulatorCreate.cs" />
     <Compile Include="Field Name Populator\PostFieldNamePopulatorUpdate.cs" />
-    <Compile Include="Multi Lingual Entity\MultiLingual.cs" />
-    <Compile Include="Multi Lingual Entity\PostMultiLingualEntityCreate.cs" />
-    <Compile Include="Multi Lingual Entity\PostMultiLingualEntityUpdate.cs" />
-    <Compile Include="Multi Lingual Entity\PreMultiLingualEntityDelete.cs" />
     <Compile Include="FC Risk Review\PostFCRiskReviewCreate.cs" />
     <Compile Include="Default Form Switcher\PreDefaultFormSwitcherCreate.cs" />
-    <Compile Include="PreValidateFieldNamePopulatorRetrieve.cs" />
     <Compile Include="PreventDuplicate\PrePreventDuplicateFieldDelete.cs" />
     <Compile Include="PreventDuplicate\PostPreventDuplicateFieldCreate.cs" />
     <Compile Include="PreventDuplicate\PostPreventDuplicateFieldUpdate.cs" />

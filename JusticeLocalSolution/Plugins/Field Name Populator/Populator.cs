@@ -40,6 +40,7 @@ namespace JusticeLocalSolution.Plugins
                     Entity entity = (Entity)context.InputParameters["Target"];
                     var entityName = entity.LogicalName;
                     var publisherPrefix = entityName.Split('_')[0];
+                    tracingService.Trace("pub prefix {0}", publisherPrefix);
                     QueryExpression qe = new QueryExpression();
                     qe.EntityName = "fp_fieldnamepopulator";
                     qe.ColumnSet = new ColumnSet();
@@ -60,6 +61,7 @@ namespace JusticeLocalSolution.Plugins
                         if (fieldNameArr.Count() > 2) throw new InvalidPluginExecutionException("You can only add 2 fields", ex1);
 
                         string nameToUse;
+
                         if (publisherPrefix == entityName)
                         {
                             nameToUse = "name";
@@ -68,6 +70,7 @@ namespace JusticeLocalSolution.Plugins
                         {
                             nameToUse = publisherPrefix + "_name";
                         }
+                      
 
                         if (string.IsNullOrWhiteSpace(fieldNames))
                         {
@@ -100,14 +103,30 @@ namespace JusticeLocalSolution.Plugins
                                 if (entityToUse.Attributes[fn] is EntityReference)
                                 {
                                     var refId = entityToUse.GetAttributeValue<EntityReference>(fn).Id;
-                                    var valToUse = service.Retrieve(fn, refId, new ColumnSet(nameToUse)).GetAttributeValue<string>(nameToUse);
-                                    if (string.IsNullOrEmpty(refName)) { 
-                                        refName = valToUse; 
+                                    var nameToUseOfContext = nameToUse;
+                                    if (fn == "egcs_contact")
+                                    {
+                                        fn = "contact";
+                                        nameToUseOfContext = "fullname";                                        
+                                    }
+                                    
+                                    if (fn == "egcs_account")
+                                    {
+                                        fn = "account";
+                                        nameToUseOfContext = "name";
+                                    }
+                                   
+                                    var valToUse = service.Retrieve(fn, refId, new ColumnSet(nameToUseOfContext)).GetAttributeValue<string>(nameToUseOfContext);
+                                    
+                                    if (string.IsNullOrEmpty(refName)) {
+                                        refName = valToUse;
                                     } else {
-                                        refName1 = valToUse; 
+                                        refName1 = valToUse;
+                                    
                                     };
-                                }
-
+                                   fn = fieldName.Trim();
+                                  
+                                }                              
                                 if (entityToUse.Attributes[fn] is string)
                                 {
                                     var valToUse = entityToUse.GetAttributeValue<string>(fn);
@@ -119,13 +138,12 @@ namespace JusticeLocalSolution.Plugins
                                     {
                                         refName1 = valToUse;
                                     };
-                                }
 
+                                }
                                 if (entityToUse.Attributes[fn] is OptionSetValue)
                                 {
                                     var val = new OptionSetHelper();
-                                   
-
+ 
                                     OptionSetHelper labelFromInput = new OptionSetHelper();
                                     var valToUse = labelFromInput.getLabelFromField(entityToUse, fn, service);
                                     //var valToUse = entityToUse.GetAttributeValue<OptionSetValue>(fn).Value.ToString();
@@ -142,7 +160,6 @@ namespace JusticeLocalSolution.Plugins
                                         refName1 = valToUse;
                                     };
                                 }
-
                                 if (entityToUse.Attributes[fn] is bool)
                                 {
                                     var valToUse = entityToUse.GetAttributeValue<bool>(fn).ToString();
@@ -155,9 +172,10 @@ namespace JusticeLocalSolution.Plugins
                                         refName1 = valToUse;
                                     };
                                 }
-                            }
+                            }                                
                             else
                             {
+
                                 //add to TRACE log
                                 // throw new InvalidPluginExecutionException("none2", ex1);
                                 tracingService.Trace("(inside try block) Field Name Populator Helper Plugin: {0}", ex1.ToString());
@@ -166,10 +184,8 @@ namespace JusticeLocalSolution.Plugins
                         }
                         MetadataHelper meta = new MetadataHelper(service, entity);
                         int fieldLength = meta.getMaxLength(nameToUse).GetValueOrDefault();
-
                         StringHelper helper = new StringHelper();
                         var newStr = helper.concatenateAfterCalc(refName, refName1, fieldLength, " ");
-
                         if (publisherPrefix == entityName)
                         {
                             entity["name"] = newStr;

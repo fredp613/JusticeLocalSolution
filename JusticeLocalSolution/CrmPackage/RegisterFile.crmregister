@@ -325,34 +325,6 @@
             </Step>
           </Steps>
         </Plugin>
-        <Plugin Description="Plug-in to PostMultiLingualEntityCreate" FriendlyName="PostMultiLingualEntityCreate" Name="JusticeLocalSolution.Plugins.PostMultiLingualEntityCreate" Id="9b1561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostMultiLingualEntityCreate">
-          <Steps>
-            <clear />
-            <Step CustomConfiguration="" Name="PostMultiLingualEntityCreate" Description="Post-Operation of Multi Lingual Entity Create" Id="9c1561e3-196a-e611-93fe-06a5b6453db2" MessageName="Create" Mode="Synchronous" PrimaryEntityName="fp_multilingualentity" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
-              <Images />
-            </Step>
-          </Steps>
-        </Plugin>
-        <Plugin Description="Plug-in to PostMultiLingualEntityUpdate" FriendlyName="PostMultiLingualEntityUpdate" Name="JusticeLocalSolution.Plugins.PostMultiLingualEntityUpdate" Id="9f1561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostMultiLingualEntityUpdate">
-          <Steps>
-            <clear />
-            <Step CustomConfiguration="" Name="PostMultiLingualEntityUpdate" Description="Post-Operation of Multi Lingual Entity Update" Id="a01561e3-196a-e611-93fe-06a5b6453db2" MessageName="Update" Mode="Synchronous" PrimaryEntityName="fp_multilingualentity" Rank="1" SecureConfiguration="" Stage="PostOutsideTransaction" SupportedDeployment="ServerOnly">
-              <Images>
-                <Image Attributes="fp_name" EntityAlias="fp_name" Id="a01561e3-196a-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PostImage" />
-              </Images>
-            </Step>
-          </Steps>
-        </Plugin>
-        <Plugin Description="Plug-in to PreMultiLingualEntityDelete" FriendlyName="PreMultiLingualEntityDelete" Name="JusticeLocalSolution.Plugins.PreMultiLingualEntityDelete" Id="a31561e3-196a-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PreMultiLingualEntityDelete">
-          <Steps>
-            <clear />
-            <Step CustomConfiguration="" Name="PreMultiLingualEntityDelete" Description="Pre-Operation of Multi Lingual Entity Delete" Id="a41561e3-196a-e611-93fe-06a5b6453db2" MessageName="Delete" Mode="Synchronous" PrimaryEntityName="fp_multilingualentity" Rank="1" SecureConfiguration="" Stage="PreInsideTransaction" SupportedDeployment="ServerOnly">
-              <Images>
-                <Image Attributes="fp_name" EntityAlias="fp_name" Id="a71561e3-196a-e611-93fe-06a5b6453db2" MessagePropertyName="Target" ImageType="PreImage" />
-              </Images>
-            </Step>
-          </Steps>
-        </Plugin>
         <Plugin Description="Plug-in to PostFCRiskReviewCreate" FriendlyName="PostFCRiskReviewCreate" Name="JusticeLocalSolution.Plugins.PostFCRiskReviewCreate" Id="6dfb765b-437f-e611-93fe-06a5b6453db2" TypeName="JusticeLocalSolution.Plugins.PostFCRiskReviewCreate">
           <Steps>
             <clear />
